@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hiking Login page</title>
+</head>  
+<body>
+    <div class="wrapper" id="login">
+        <form>
+            <h2>Login</h2>
+            <div class="input-field">
+                <input type="text" required>
+                <label>Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" required>
+                <label>Enter your password</label>
+            </div>
+            <div class="forget">
+                <label for="remember">
+                    <input type="checkbox" id="remember">
+                    <p>Remember me</p>
+                </label>
+                <a href="#">Forget password</a>
+            </div>
+            <button type="submit">Log in</button>
+            <p class="regbtn">Don't have an account? <a href="#" id="registerbtn">register</a></p>
+    
+        </form>
+    </div>
+
+    <div class="wrapper" id="register">
+        <form>
+            <h2>Register</h2>
+            <div class="input-field">
+                <input type="text" required>
+                <label>Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" required>
+                <label>Enter your password</label>
+            </div>
+            <div class="input-field">
+                <input type="password" required>
+                <label>Confirm your password</label>
+            </div>
+            <button type="submit">Register</button>
+            <p>I have an account <a href="#" id="loginbtn">login</a></p>
+    
+        </form>
+    </div>
+    <script>
+        const registerBtn = document.querySelector("#registerbtn");
+        const loginBtn = document.querySelector("#loginbtn");
+        const registerForm = document.querySelector("#register");
+        const loginForm = document.querySelector("#login");
+
+        // Hide register form by default
+        registerForm.style.display = "none";
+
+        registerBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            registerForm.style.display = "block";
+            loginForm.style.display = "none";
+        });
+        loginBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            registerForm.style.display = "none";
+            loginForm.style.display = "block";
+        });
+    </script>
+    
+</body>  
+</html>
